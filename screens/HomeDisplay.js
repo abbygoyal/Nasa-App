@@ -5,7 +5,6 @@ import axios from "axios";
 const HomeDisplay = ({ navigation }) => {
   const [astroidInput, setAstroidId] = useState("");
   const [dataId, setDataId] = useState([]);
-  console.log(astroidInput, "userinput");
   const getRandomAstroidID = () => {
     axios
       .get(
@@ -53,7 +52,10 @@ const HomeDisplay = ({ navigation }) => {
         <Button
           title="Random Asteroid"
           color="#6133FF"
-          onPress={() => getRandomAstroidID()}
+          // onPress={() => getRandomAstroidID()}
+          onPress={() => {
+            navigation.navigate("About Astroid", { id: astroidInput });
+          }}
         />
       </View>
 
